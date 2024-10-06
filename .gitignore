@@ -1,0 +1,39 @@
+# Dependências
+node_modules/
+
+# Arquivos de ambiente
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Diretório de build
+dist/
+
+# Arquivos temporários
+tmp/
+temp/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de IDE/editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de configuração local
+config.local.js
+
+# Arquivos de cobertura de testes
+coverage/
+
+# Arquivos de build do React (se aplicável)
+build/
+
+# Outros arquivos e diretórios específicos do projeto
+# Adicione aqui conforme necessário

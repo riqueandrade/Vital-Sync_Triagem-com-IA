@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Consulta - Vital Sync</title>
+    <link rel="stylesheet" href="css/schedule-appointment.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="schedule-appointment.html">Agendar Consulta</a></li>
+                <li><a href="#" id="logout">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Agendar Consulta</h1>
+        <form id="appointmentForm">
+            <div>
+                <label for="doctorId">Médico:</label>
+                <select id="doctorId" name="doctorId" required>
+                    <!-- Opções de médicos serão preenchidas via JavaScript -->
+                </select>
+            </div>
+            <div>
+                <label for="appointmentDate">Data e Hora:</label>
+                <input type="datetime-local" id="appointmentDate" name="appointmentDate" required>
+            </div>
+            <div>
+                <label for="notes">Observações:</label>
+                <textarea id="notes" name="notes" rows="4"></textarea>
+            </div>
+            <button type="submit">Agendar Consulta</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Vital Sync. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/schedule-appointment.js"></script>
+</body>
+</html>
