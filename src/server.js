@@ -23,7 +23,20 @@ const io = socketIo(server);
 const port = process.env.PORT || 3000;
 
 // Configurações de segurança
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net"],
+        imgSrc: ["'self'", "data:", "https:"],
+        fontSrc: ["'self'", "https://cdn.jsdelivr.net"],
+      },
+    },
+    crossOriginEmbedderPolicy: false,
+  })
+);
 app.use(xss());
 app.use(cors());
 app.use(express.json({ limit: '10kb' })); // Limita o tamanho do corpo da requisição
@@ -124,13 +137,3 @@ async function startServer() {
 }
 
 startServer();
-
-// Configurar CSP
-app.use(helmet.contentSecurityPolicy({
-    directives: {
-        defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "https://cdn.jsdelivr.net"],
-        styleSrc: ["'self'", "https://cdn.jsdelivr.net"],
-        fontSrc: ["'self'", "https://cdn.jsdelivr.net"]
-    }
-}));

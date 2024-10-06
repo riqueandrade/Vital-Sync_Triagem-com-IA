@@ -1,0 +1,105 @@
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.bg-primary {
+    background-color: #4e73df !important;
+}
+
+.text-primary {
+    color: #4e73df !important;
+}
+
+.btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2e59d9;
+}
+
+.auth-sidebar {
+    background: linear-gradient(45deg, #4e73df, #224abe);
+    color: white;
+    padding: 2rem;
+}
+
+.auth-sidebar h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.auth-sidebar .lead {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.auth-sidebar ul {
+    padding-left: 1.5rem;
+}
+
+.auth-sidebar ul li {
+    margin-bottom: 1rem;
+}
+
+.auth-form {
+    padding: 2rem;
+}
+
+.auth-form h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Estilos melhorados para inputs */
+.form-control {
+    border: 2px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.input-group-text {
+    background-color: #f8f9fa;
+    border: 2px solid #ced4da;
+    border-right: none;
+}
+
+.input-group .form-control {
+    border-left: none;
+}
+
+.input-group .form-control:focus {
+    border-color: #4e73df;
+    box-shadow: none;
+}
+
+.input-group:focus-within .input-group-text {
+    border-color: #4e73df;
+}
+
+.password-toggle {
+    cursor: pointer;
+}
+
+.password-requirements {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.requirement.met {
+    color: #28a745;
+}
+
+@media (max-width: 767.98px) {
+    .auth-sidebar {
+        display: none;
+    }
+}

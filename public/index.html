@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vital Sync - Plataforma de Telemedicina</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="description" content="Vital Sync - Plataforma de telemedicina com triagem de sintomas por IA">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https:;">
+    <title>Vital Sync - Telemedicina Inteligente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="#">Vital Sync</a>
+                <a class="navbar-brand" href="#">
+                    <i class="bi bi-heart-pulse-fill me-2"></i>
+                    Vital Sync
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -19,6 +25,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
                         <li class="nav-item"><a class="nav-link" href="#recursos">Recursos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#como-funciona">Como Funciona</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
                         <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
                         <li class="nav-item"><a class="btn btn-light" href="register.html">Cadastre-se</a></li>
@@ -29,18 +36,26 @@
     </header>
 
     <main>
-        <section id="hero" class="py-5 text-center">
+        <section id="hero" class="py-5 text-center bg-light">
             <div class="container">
                 <h1 class="display-4">Bem-vindo à Vital Sync</h1>
-                <p class="lead">Sua plataforma de telemedicina com inteligência artificial.</p>
+                <p class="lead">Sua plataforma de telemedicina com triagem de sintomas por inteligência artificial.</p>
                 <a href="register.html" class="btn btn-primary btn-lg">Comece Agora</a>
             </div>
         </section>
 
         <section id="sobre" class="py-5">
             <div class="container">
-                <h2>Sobre Nós</h2>
-                <p>A Vital Sync é uma plataforma inovadora que conecta pacientes a profissionais de saúde de maneira prática e acessível, utilizando tecnologia de ponta para oferecer o melhor em telemedicina.</p>
+                <h2 class="text-center mb-4">Sobre Nós</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>A Vital Sync é uma plataforma inovadora que conecta pacientes a profissionais de saúde de maneira prática e acessível, utilizando tecnologia de ponta para oferecer o melhor em telemedicina.</p>
+                        <p>Nossa missão é democratizar o acesso à saúde de qualidade, proporcionando atendimento rápido e eficiente através da tecnologia.</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <i class="bi bi-people-fill icon-large text-primary"></i>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -50,32 +65,36 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="card mb-4">
-                            <div class="card-body">
-                                <h3 class="card-title">Consultas Online</h3>
+                            <div class="card-body text-center">
+                                <i class="bi bi-camera-video-fill icon-medium text-primary mb-3"></i>
+                                <h3 class="card-title h5">Consultas Online</h3>
                                 <p class="card-text">Conecte-se com médicos de forma rápida e segura.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card mb-4">
-                            <div class="card-body">
-                                <h3 class="card-title">Triagem de Sintomas com IA</h3>
+                            <div class="card-body text-center">
+                                <i class="bi bi-clipboard2-pulse-fill icon-medium text-primary mb-3"></i>
+                                <h3 class="card-title h5">Triagem de Sintomas com IA</h3>
                                 <p class="card-text">Avaliação preliminar de sintomas usando inteligência artificial.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card mb-4">
-                            <div class="card-body">
-                                <h3 class="card-title">Histórico Médico Integrado</h3>
+                            <div class="card-body text-center">
+                                <i class="bi bi-journal-medical icon-medium text-primary mb-3"></i>
+                                <h3 class="card-title h5">Histórico Médico Integrado</h3>
                                 <p class="card-text">Acesse seu histórico médico completo em um só lugar.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card mb-4">
-                            <div class="card-body">
-                                <h3 class="card-title">Monitoramento em Tempo Real</h3>
+                            <div class="card-body text-center">
+                                <i class="bi bi-graph-up icon-medium text-primary mb-3"></i>
+                                <h3 class="card-title h5">Monitoramento em Tempo Real</h3>
                                 <p class="card-text">Acompanhamento contínuo de sua saúde.</p>
                             </div>
                         </div>
@@ -84,30 +103,104 @@
             </div>
         </section>
 
-        <section id="contato" class="py-5">
+        <section id="como-funciona" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Como Funciona</h2>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-person-plus-fill icon-medium text-primary"></i>
+                        </div>
+                        <h3 class="h5">1. Cadastre-se</h3>
+                        <p>Crie sua conta gratuitamente e preencha seu perfil de saúde.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-chat-dots-fill icon-medium text-primary"></i>
+                        </div>
+                        <h3 class="h5">2. Descreva seus Sintomas</h3>
+                        <p>Use nossa ferramenta de triagem por IA para uma avaliação inicial.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="mb-3">
+                            <i class="bi bi-calendar2-check-fill icon-medium text-primary"></i>
+                        </div>
+                        <h3 class="h5">3. Consulte um Médico</h3>
+                        <p>Agende uma consulta online com um profissional qualificado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="py-5 bg-light">
             <div class="container">
                 <h2 class="text-center mb-4">Entre em Contato</h2>
                 <form id="contactForm" class="mx-auto" style="max-width: 500px;">
                     <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Nome" required>
+                        <input type="text" class="form-control" id="name" placeholder="Nome" required>
                     </div>
                     <div class="mb-3">
-                        <input type="email" class="form-control" placeholder="E-mail" required>
+                        <input type="email" class="form-control" id="email" placeholder="E-mail" required>
                     </div>
                     <div class="mb-3">
-                        <textarea class="form-control" rows="4" placeholder="Mensagem" required></textarea>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Mensagem" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
                 </form>
             </div>
         </section>
     </main>
 
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Vital Sync. Todos os direitos reservados.</p>
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Sobre a Vital Sync</h5>
+                    <p class="small">Somos uma plataforma de telemedicina dedicada a conectar pacientes e médicos, oferecendo cuidados de saúde acessíveis e de qualidade.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#sobre" class="text-white">Sobre Nós</a></li>
+                        <li><a href="#recursos" class="text-white">Nossos Recursos</a></li>
+                        <li><a href="#como-funciona" class="text-white">Como Funciona</a></li>
+                        <li><a href="#contato" class="text-white">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contate-nos</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope-fill me-2"></i> contato@vitalsync.com</li>
+                        <li><i class="bi bi-telephone-fill me-2"></i> (11) 1234-5678</li>
+                        <li><i class="bi bi-geo-alt-fill me-2"></i> São Paulo, SP</li>
+                    </ul>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 Vital Sync. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-white">Termos de Uso</a></li>
+                        <li class="list-inline-item">·</li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
