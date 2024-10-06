@@ -9,7 +9,7 @@ body {
     height: 100vh;
 }
 
-.login-container {
+.register-container {
     background-color: white;
     padding: 2rem;
     border-radius: 8px;
@@ -28,7 +28,7 @@ form {
     flex-direction: column;
 }
 
-input {
+input, select {
     margin-bottom: 1rem;
     padding: 0.5rem;
     border: 1px solid #ddd;
@@ -49,32 +49,18 @@ button:hover {
     background-color: #45a049;
 }
 
-.password-container {
-    position: relative;
-}
-
-#togglePassword {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-p {
-    text-align: center;
+.password-requirements {
     margin-top: 1rem;
+    font-size: 0.875rem;
 }
 
-a {
-    color: #4CAF50;
-    text-decoration: none;
+.requirement {
+    margin-bottom: 0.5rem;
+    color: #dc3545;
 }
 
-a:hover {
-    text-decoration: underline;
+.requirement.met {
+    color: #198754;
 }
 
 .form-signin {
@@ -86,14 +72,13 @@ a:hover {
     z-index: 2;
 }
 
-.form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+#togglePassword {
+    background: none;
+    border: none;
+    padding: 0;
+    height: 100%;
 }
 
-.form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+#togglePassword:focus {
+    box-shadow: none;
 }

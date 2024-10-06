@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat de Consulta - Vital Sync</title>
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#" id="logout">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Chat de Consulta</h1>
+        <div id="chat-info">
+            <p>Consulta #<span id="appointment-id"></span></p>
+            <p>Paciente: <span id="patient-name"></span></p>
+            <p>Médico: <span id="doctor-name"></span></p>
+        </div>
+        <div id="chat-container">
+            <div id="messages"></div>
+            <form id="chat-form">
+                <input type="text" id="message-input" placeholder="Digite sua mensagem..." required>
+                <input type="file" id="file-input" accept="image/*,.pdf">
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Vital Sync. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

@@ -3,50 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net;">
     <title>Cadastro - Vital Sync</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/register.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Cadastro</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h1>Cadastro</h1>
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+    <main class="form-signin w-100 m-auto">
         <form id="registerForm">
-            <div>
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
+            <h1 class="h3 mb-3 fw-normal text-center">Cadastro</h1>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name" placeholder="Nome" required>
+                <label for="name">Nome</label>
             </div>
-            <div>
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" required>
+                <label for="email">E-mail</label>
             </div>
-            <div>
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+            <div class="form-floating mb-3 position-relative">
+                <input type="password" class="form-control" id="password" placeholder="Senha" required>
+                <label for="password">Senha</label>
+                <button type="button" id="togglePassword" class="btn btn-outline-secondary position-absolute end-0 top-50 translate-middle-y">
+                    <i class="bi bi-eye"></i>
+                </button>
             </div>
-            <div>
-                <label for="role">Tipo de Usuário:</label>
-                <select id="role" name="role" required>
+            <div class="form-floating mb-3">
+                <select class="form-select" id="role" required>
+                    <option value="">Selecione o tipo de usuário</option>
                     <option value="patient">Paciente</option>
                     <option value="doctor">Médico</option>
                 </select>
+                <label for="role">Tipo de Usuário</label>
             </div>
-            <button type="submit">Cadastrar</button>
+            <button class="btn btn-primary w-100 py-2" type="submit">Cadastrar</button>
+            <div class="password-requirements mt-3">
+                <p>A senha deve conter:</p>
+                <p class="requirement" id="length">Pelo menos 8 caracteres</p>
+                <p class="requirement" id="uppercase">Pelo menos 1 letra maiúscula</p>
+                <p class="requirement" id="special">Pelo menos 1 caractere especial</p>
+            </div>
+            <p class="mt-3 text-center">Já tem uma conta? <a href="login.html">Faça login</a></p>
         </form>
     </main>
-
-    <footer>
-        <p>&copy; 2024 Vital Sync. Todos os direitos reservados.</p>
-    </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/register.js"></script>
 </body>
 </html>

@@ -5,10 +5,31 @@ const { getPool } = require('../db');
 
 const router = express.Router();
 
+// Função de validação de email
+function validateEmail(email) {
+  const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return re.test(String(email).toLowerCase());
+}
+
 // Rota de registro
 router.post('/register', async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
+
+    // Validação de entrada
+    if (!name || !email || !password || !role) {
+      return res.status(400).json({ message: 'Todos os campos são obrigatórios' });
+    }
+    if (!validateEmail(email)) {
+      return res.status(400).json({ message: 'Email inválido' });
+    }
+    if (password.length < 8) {
+      return res.status(400).json({ message: 'A senha deve ter pelo menos 8 caracteres' });
+    }
+    if (!['patient', 'doctor'].includes(role)) {
+      return res.status(400).json({ message: 'Tipo de usuário inválido' });
+    }
+
     const pool = getPool();
 
     // Verificar se o usuário já existe

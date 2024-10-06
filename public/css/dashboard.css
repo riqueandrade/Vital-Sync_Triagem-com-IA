@@ -43,3 +43,57 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+#notificationsPanel {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#notificationsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#notificationsList li {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#notificationsList li.unread {
+    font-weight: bold;
+    background-color: #f8f9fa;
+}
+
+.markAsRead {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.markAsRead:hover {
+    background-color: #45a049;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+}
+
+.notification a {
+    color: white;
+    text-decoration: underline;
+}

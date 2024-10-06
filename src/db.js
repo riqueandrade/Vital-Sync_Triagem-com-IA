@@ -56,6 +56,43 @@ async function initDatabase() {
       )
     `);
 
+    // Criar tabela de notificações
+    await connection.query(`
+      CREATE TABLE IF NOT EXISTS notifications (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        user_id INT,
+        message TEXT NOT NULL,
+        is_read BOOLEAN DEFAULT FALSE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users(id)
+      )
+    `);
+
+    // Criar tabela de mensagens de chat
+    await connection.query(`
+      CREATE TABLE IF NOT EXISTS chat_messages (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        appointment_id INT,
+        sender_id INT,
+        message TEXT,
+        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (appointment_id) REFERENCES appointments(id),
+        FOREIGN KEY (sender_id) REFERENCES users(id)
+      )
+    `);
+
+    // Criar tabela de avaliações
+    await connection.query(`
+      CREATE TABLE IF NOT EXISTS ratings (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        appointment_id INT,
+        rating INT,
+        comment TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (appointment_id) REFERENCES appointments(id)
+      )
+    `);
+
     console.log('Banco de dados inicializado com sucesso');
     
     // Fechar a conexão inicial

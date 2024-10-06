@@ -5,16 +5,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
+    const doctorSelect = document.getElementById('doctorId');
+    const dateInput = document.getElementById('appointmentDate');
+    const timeSelect = document.getElementById('appointmentTime');
+    const appointmentForm = document.getElementById('appointmentForm');
+
     // Carregar lista de médicos
     try {
-        const response = await fetch('/api/auth/doctors', {
+        const response = await fetch('/api/doctors', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         });
         const doctors = await response.json();
-
-        const doctorSelect = document.getElementById('doctorId');
         doctors.forEach(doctor => {
             const option = document.createElement('option');
             option.value = doctor.id;
@@ -26,12 +29,41 @@ document.addEventListener('DOMContentLoaded', async () => {
         alert('Erro ao carregar lista de médicos');
     }
 
-    // Lidar com o envio do formulário
-    document.getElementById('appointmentForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
+    // Atualizar horários disponíveis quando a data ou médico for alterado
+    async function updateAvailableSlots() {
+        const doctorId = doctorSelect.value;
+        const date = dateInput.value;
+        if (doctorId && date) {
+            try {
+                const response = await fetch(`/api/appointments/available-slots/${doctorId}?date=${date}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                const availableSlots = await response.json();
+                timeSelect.innerHTML = '<option value="">Selecione um horário</option>';
+                availableSlots.forEach(slot => {
+                    const option = document.createElement('option');
+                    option.value = slot;
+                    option.textContent = slot;
+                    timeSelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Erro ao buscar horários disponíveis:', error);
+                alert('Erro ao buscar horários disponíveis');
+            }
+        }
+    }
 
-        const doctorId = document.getElementById('doctorId').value;
-        const appointmentDate = document.getElementById('appointmentDate').value;
+    doctorSelect.addEventListener('change', updateAvailableSlots);
+    dateInput.addEventListener('change', updateAvailableSlots);
+
+    // Lidar com o envio do formulário
+    appointmentForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const doctorId = doctorSelect.value;
+        const date = dateInput.value;
+        const time = timeSelect.value;
         const notes = document.getElementById('notes').value;
 
         try {
@@ -43,7 +75,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 },
                 body: JSON.stringify({
                     doctor_id: doctorId,
-                    date: appointmentDate,
+                    date: `${date}T${time}`,
                     notes: notes
                 })
             });
